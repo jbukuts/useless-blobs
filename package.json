@@ -1,0 +1,28 @@
+{
+  "name": "useless-blobs",
+  "version": "1.0.0",
+  "description": "Creates blob SVGs to use in your designs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "React"
+  ],
+  "author": {
+    "name": "Jake Bukuts",
+    "email": "jbukuts@gmail.com"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">=15.0.1",
+    "react-dom": ">=15.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.27",
+    "react": ">=15.0.1",
+    "react-dom": ">=15.0.1",
+    "typescript": "4.9.4"
+  }
+}
