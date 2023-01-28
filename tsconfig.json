@@ -1,10 +1,10 @@
 {
     "compilerOptions": {
-        "target": "ES2015",
+        "target": "es5",
         "module": "commonjs",
         "lib": ["es2017", "es7", "es6", "dom"],
         "declaration": true,
-        "outDir": "dist",
+        "outDir": "lib",
         "allowJs": true,
         "skipLibCheck": true,
         "strict": true,
@@ -16,6 +16,6 @@
         "jsx": "react",
         "incremental": true
     },
-    "include": ["./index.ts"],
-    "exclude": ["node_modules", "./dist"]
+    "include": ["./index.ts", "./components"],
+    "exclude": ["node_modules", "./lib"]
 }

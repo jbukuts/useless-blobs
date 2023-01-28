@@ -1,5 +1,6 @@
 import { randomNum, giveOrTake } from './helpers';
 import { CreatePolygon, Point } from './types';
+import defaultOptions from './defaults';
 
 const UNIT_CIRCLE = 2 * Math.PI;
 
@@ -39,10 +40,9 @@ const calculateIntersectionPoint = (
     angle: number,
     heightRadius: number,
     widthRadius: number,
-    type: string = "ellipsis"
+    type: string
 ): Point => {
-    let x;
-    let y;
+    let x, y;
     const tan = Math.abs(Math.tan(angle));
 
     if (type === "rectangle") {
@@ -74,13 +74,13 @@ const calculateIntersectionPoint = (
  */
 const createPolygon = (options: CreatePolygon): Array<Point> => {
     const { 
-        verts = 6, 
-        width = 200, 
-        height = 200, 
-        irregularity = .25, 
-        spikiness = .5, 
-        boundingShape = 'ellipsis'
-    } = options;
+        verts, 
+        width, 
+        height, 
+        irregularity, 
+        spikiness, 
+        boundingShape
+    } = {...defaultOptions, ...options};
 
     const [wRadius, hRadius] = [width / 2, height / 2];
 
@@ -131,6 +131,8 @@ const calculateControl = (
     p3: Point,
     smoothVal: number = 1
 ): [Point, Point] => {
+    smoothVal = Math.max(0, Math.min(smoothVal, 1));
+
     const [x0, y0] = p0;
     const [x1, y1] = p1;
     const [x2, y2] = p2;
