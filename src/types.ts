@@ -1,8 +1,8 @@
 declare global {
-    export interface Number {
-      // eslint-disable-next-line no-unused-vars
-      toDecimal(digits: number): number;
-    }
+  export interface Number {
+    // eslint-disable-next-line no-unused-vars
+    toDecimal(digits: number): number;
+  }
 }
 
 export type Point = [number, number];
@@ -13,11 +13,11 @@ export interface CreatePolygon {
   height?: number;
   irregularity?: number;
   spikiness?: number;
-  boundingShape?: 'rectangle' | 'ellipsis'
+  boundingShape?: 'rectangle' | 'ellipsis';
 }
 
 export interface CreateBlob extends CreatePolygon {
-  smoothing?: number
+  smoothing?: number;
 }
 
 export interface BlobProps extends CreateBlob {

@@ -5,4 +5,9 @@
 
 html, body {
     font-family: 'Poppins', sans-serif;
+    width: 100%;
+}
+
+body * {
+    box-sizing: border-box;
 }

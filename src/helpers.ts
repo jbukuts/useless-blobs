@@ -2,4 +2,6 @@ const randomNum = (min: number, max: number): number => Math.random() * (max - m
 
 const giveOrTake = (value: number, deviation: number): number => randomNum(value - deviation, value + deviation);
 
-export { randomNum, giveOrTake };
+const clamp = (value: number, min = 0, max = 1): number => Math.max(min, Math.min(value, max));
+
+export { randomNum, giveOrTake, clamp };
