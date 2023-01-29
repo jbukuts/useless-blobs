@@ -51,6 +51,7 @@ const App = () => {
 
   useEffect(() => {
     buildABlob();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [verts, height, width, irregularity, spikiness, smoothing, shape, debug])
 
   return (<>
