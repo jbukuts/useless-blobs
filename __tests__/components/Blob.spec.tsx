@@ -29,6 +29,7 @@ describe('<UselessBlob /> -', () => {
         smoothing={0.5}
         className='test-class'
         style={{ border: '1px solid black' }}
+        pathStyle={{ transition: '.5s' }}
       />
     );
     const blob = screen.getByTestId('useless-blob');
@@ -39,7 +40,8 @@ describe('<UselessBlob /> -', () => {
     expect(blob.attributes.getNamedItem('height')?.value).toBe('300');
     expect(blob.attributes.getNamedItem('width')?.value).toBe('500');
 
-    const path = blob.children[0];
+    const path = blob.children[0] as SVGElement;
     expect(path.attributes.getNamedItem('fill')?.value).toBe('red');
+    expect(path.style.transition).toBe('.5s');
   });
 });

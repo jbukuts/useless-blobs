@@ -73,5 +73,10 @@ describe('index - ', () => {
       const path = generateBlobPath({ ...CUSTOM_OPTIONS, smoothing: 0.5 } as CreateBlob);
       expect(path).not.toBe('');
     });
+
+    it('can still return path string for bad smoothing', () => {
+      const path = generateBlobPath({ ...CUSTOM_OPTIONS, smoothing: 1.5 } as CreateBlob);
+      expect(path).not.toBe('');
+    });
   });
 });

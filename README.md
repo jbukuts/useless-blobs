@@ -1,6 +1,15 @@
 # Useless Blobs
 
-Parametrized random SVG blob creation.
+<p>
+    <a href="https://www.npmjs.com/package/useless-blobs">
+        <img src="https://img.shields.io/npm/v/useless-blobs">
+    </a>
+    <a href="https://github.com/jbukuts/useless-blobs/blob/main/LICENSE">
+        <img src="https://img.shields.io/npm/l/useless-blobs">
+    </a>
+</p>
+
+Parametrized random SVG blob creation. Playground [here](https://jbukuts.github.io/useless-blobs/)
 
 ## Installation
  
@@ -60,7 +69,9 @@ There is also a React component exported to simplify use for React projects.
 import UselessBlob from 'useless-blobs/lib/components';
 
 <UselessBlob />
+
 // or
+
 <UselessBlob
     fill='red'
     stroke='blue'
@@ -73,4 +84,12 @@ import UselessBlob from 'useless-blobs/lib/components';
 />
 ```
 
-It should be noted that for the React component all props follow the same name and requirements as the options table.
+It should be noted that for the React component all props follow the same name and requirements as the options table with additional props for:
+
+| Option          | Description                                              | Allowed Values            | Optional | Default      |
+|-----------------|----------------------------------------------------------|---------------------------|----------|--------------|
+| `fill`          | What color to paint blob                                 | Any color                 | ✅       | `'black'`      |
+| `stroke`        | Color of stroke around blob                              | Any color                 | ✅       | `'transparent'`|
+| `style`         | In-line style object to apply to underlying `<svg>` tag  | React in-line style object| ✅       | `undefined`    |
+| `pathStyle`     | In-line style object to apply to underlying `<path>` tag | React in-line style object| ✅       | `{ transition: '.25s' }`   |
+| `className`     | CSS class to apply to underlying `<svg>` tag             | String                    | ✅       | `undefined`    |

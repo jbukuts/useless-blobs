@@ -25,4 +25,5 @@ export interface BlobProps extends CreateBlob {
   fill?: string;
   stroke?: string;
   className?: string;
+  pathStyle?: object;
 }

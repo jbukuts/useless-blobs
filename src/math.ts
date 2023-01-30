@@ -102,7 +102,7 @@ const createPolygon = (options: CreatePolygon = {}): Point[] => {
  * @param {Point} p3 - The point after our line segment.
  * @param {number} smoothVal - Coefficient by which control points should align.
  */
-const calculateControl = (p0: Point, p1: Point, p2: Point, p3: Point, smoothVal = 1): [Point, Point] => {
+const calculateControl = (p0: Point, p1: Point, p2: Point, p3: Point, smoothVal: number): [Point, Point] => {
   smoothVal = clamp(smoothVal, 0, 1);
 
   const [x0, y0] = p0;
@@ -147,7 +147,7 @@ const calculateControl = (p0: Point, p1: Point, p2: Point, p3: Point, smoothVal 
  * @param {Point[]} polygonPoints - Points [x,y] that make up a polygon.
  * @param {number} smoothing - Coefficient by which control points should align.
  */
-const allControlPoints = (polygonPoints: Point[], smoothing = 1) => {
+const allControlPoints = (polygonPoints: Point[], smoothing: number) => {
   const loopedPoints = [
     polygonPoints[polygonPoints.length - 1],
     ...polygonPoints,
